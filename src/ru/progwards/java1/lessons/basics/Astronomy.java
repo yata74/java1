@@ -26,11 +26,16 @@ public class Astronomy {
         return a1a3;
     }
     public static void main(String[] args) {
-        earthSquare();
-        mercurySquare();
-        jupiterSquare();
-        earthVsMercury();
-        earthVsJupiter();
+        double a4 = earthSquare();
+        System.out.println("a1 = " + a4);
+        double a5 = mercurySquare();
+        System.out.println("a2 = " + a5);
+        double a6 = jupiterSquare();
+        System.out.println("a3 = " + a6);
+        double a7 = earthVsMercury();
+        System.out.println("a1a2 = " + a7);
+        double a8 = earthVsJupiter();
+        System.out.println("a1a3 = " + a8);
 
     }
 }
