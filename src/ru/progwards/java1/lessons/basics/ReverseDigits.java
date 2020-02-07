@@ -11,7 +11,7 @@ public class ReverseDigits {
         return (a1);
     }
     public static void main(String[] args){
-        reverseDigits(678);
+        reverseDigits(123);
 
     }
 }
