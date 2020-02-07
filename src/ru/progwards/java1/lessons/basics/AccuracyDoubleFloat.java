@@ -2,17 +2,17 @@ package ru.progwards.java1.lessons.basics;
 
 public class AccuracyDoubleFloat {
     public static double volumeBallDouble(double radius){
-        double b2 = radius*radius*radius;
-        double b1 = b2*3.14;
-        double b3 = b1* 4;
-        double a1 = b3/3;
+        double b1 = radius * radius * radius;
+        double b2 = 4 * 3.14;
+        double b3 = b1 * b2;
+        double a1 = b3 / 3;
         return a1;
     }
     public static float volumeBallFloat(float radius){
-        float c2 = radius * radius * radius;
-        float c1 = 3.14F * c2;
-        float c3 = 4F * c1;
-        float a2 = c3/3F;
+        float c1 = radius * radius * radius;
+        float c2 = 4f * 3.14f;
+        float c3 = c1 * c2;
+        float a2 = c3/3f;
         return a2;
     }
     public static double calculateAccuracy(double radius) {
