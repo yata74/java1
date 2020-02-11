@@ -10,7 +10,7 @@ public class TriangleInfo {
         return result;
     }
     public static boolean isIsoscelesTriangle(int a, int b, int c){
-        boolean result = a==b && a==c && b==c;
+        boolean result = a==b || a==c || b==c;
         return result;
     }
     public static void main(String[] args) {
