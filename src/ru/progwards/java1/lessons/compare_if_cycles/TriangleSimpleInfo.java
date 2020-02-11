@@ -68,7 +68,7 @@ public class TriangleSimpleInfo {
         }
     }
     public static boolean isEquilateralTriangle(int a, int b, int c){
-        boolean result = a==b || a==c || b==c;
+        boolean result = a==b && a==c;
         return result;
     }
 
@@ -77,7 +77,7 @@ public class TriangleSimpleInfo {
         System.out.println(a1);
         int a2 = minSide(3,3,5);
         System.out.println(a2);
-        boolean a3 = isEquilateralTriangle(5,6,5);
+        boolean a3 = isEquilateralTriangle(6,6,6);
         System.out.println(a3);
     }
 }
