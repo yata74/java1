@@ -45,7 +45,8 @@ public class CyclesGoldenFibo {
         } else if (b == c) {
             result = 1.61703 < otn3 && otn3 > 1.61903;
             return result;
-        } else return result;
+        } else
+            return result;
     }
 
     public static void main(String[] args) {
@@ -53,14 +54,14 @@ public class CyclesGoldenFibo {
         System.out.println(a2);
         int a3 = fiboNumber(10);
         System.out.println(a3);
-        boolean a4 = isGoldenTriangle(5, 5, 7);
+        boolean a4 = isGoldenTriangle(7, 7, 2);
         System.out.println(a4);
         for (int i = 1; i<=15; i++)
             System.out.println(fiboNumber(i));
         for (int i = 1; i <= 100; i++)
             for (int j = 1; j <= 100; j++)
                 if (isGoldenTriangle(i, i, j))
-                     System.out.println("Злолтой треугольник с ребрами = "+i+" и основанием "+j);
+                     System.out.println("Золотой треугольник с ребрами = "+i+" и основанием "+j);
     }
 
 }
