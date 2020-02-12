@@ -6,10 +6,12 @@ public class TriangleSimpleInfo {
             if (a > c) {
                 System.out.print("Большие стороны а и b равные ");
                 return a;
-            } else {
-                System.out.print("Самая большая сторона c = ");
-                return c;
-            }
+            } else if (a==c) {
+                System.out.print(" Треугольник равносторонний со стороной равной ");
+                return a;
+                   }else System.out.print("Самая большая сторона c = ");
+                   return c;
+
         } else if (b==c){
                 if (a>b){
                     System.out.print("Самая большая сторона a = ");
@@ -39,10 +41,12 @@ public class TriangleSimpleInfo {
             if (a < c) {
                 System.out.print("Меньшие стороны а и b равные ");
                 return a;
-            } else {
-                System.out.print("Самая маленькая сторона c = ");
+            } else if (b==c) {
+                System.out.print(" Треугольник равносторонний со стороной равной ");
+                return a;
+            }else System.out.print("Самая маленькая сторона c = ");
                 return c;
-            }
+
         } else if (b==c){
             if (a<b){
                 System.out.print("Самая маленькая сторона a = ");
@@ -75,9 +79,9 @@ public class TriangleSimpleInfo {
     public static void main(String[] args) {
         int a1 = maxSide(5, 3,3);
         System.out.println(a1);
-        int a2 = minSide(3,3,5);
+        int a2 = minSide(3,5,3);
         System.out.println(a2);
-        boolean a3 = isEquilateralTriangle(6,6,6);
+        boolean a3 = isEquilateralTriangle(6,6,5);
         System.out.println(a3);
     }
 }
