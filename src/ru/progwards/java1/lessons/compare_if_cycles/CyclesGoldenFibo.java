@@ -36,20 +36,24 @@ public class CyclesGoldenFibo {
 
     public static boolean isGoldenTriangle(int a, int b, int c) {
         boolean result = false;
-        double otn1 = a / c;
-        double otn2 = a / b;
-        double otn3 = b / a;
-        if (a == b) {
-            result = 1.61703 < otn1 && otn1 > 1.61903;
-            return result;
-        } else if (a == c) {
-            result = 1.61703 < otn2 && otn2 > 1.61903;
-            return result;
-        } else if (b == c) {
-            result = 1.61703 < otn3 && otn3 > 1.61903;
-            return result;
-        } else
-            return result;
+        boolean result1 = a < (b + c) && b < (a + c) && c < (b + a);
+        if (result1 == true) {
+            double otn1 = a / c;
+            double otn2 = a / b;
+            double otn3 = b / a;
+            if (a == b) {
+                result = 1.61703 < otn1 && otn1 > 1.61903;
+                return result;
+            } else if (a == c) {
+                result = 1.61703 < otn2 && otn2 > 1.61903;
+                return result;
+            } else if (b == c) {
+                result = 1.61703 < otn3 && otn3 > 1.61903;
+                return result;
+            } else
+                return result;
+        }
+        return result;
     }
 
     public static void main(String[] args) {
@@ -57,7 +61,7 @@ public class CyclesGoldenFibo {
         System.out.println(a2);
         int a3 = fiboNumber(2);
         System.out.println(a3);
-        boolean a4 = isGoldenTriangle(7, 7, 2);
+        boolean a4 = isGoldenTriangle(7, 2, 7);
         System.out.println(a4);
         for (int i = 1; i<=15; i++)
             System.out.println(fiboNumber(i));
