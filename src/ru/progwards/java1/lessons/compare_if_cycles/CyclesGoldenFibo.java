@@ -38,18 +38,9 @@ public class CyclesGoldenFibo {
         boolean result = false;
         boolean result1 = a < (b + c) && b < (a + c) && c < (b + a);
         if (result1 == true) {
-            double a1;
-            a1 = a;
-            double b1;
-            b1 = b;
-            double c1;
-            c1 = c;
-            double otn1;
-            otn1 = a1 / c1;
-            double otn2;
-            otn2 = a1 / b1;
-            double otn3;
-            otn3 = b1 / a1;
+            double otn1 = (double)a / (double)c;
+            double otn2 = (double)a / (double)b;
+            double otn3 = (double)b / (double)a;
             if (a == b) {
                 result = 1.61703 < otn1 && otn1 > 1.61903;
                 return result;
