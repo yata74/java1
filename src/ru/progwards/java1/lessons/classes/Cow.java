@@ -10,17 +10,17 @@ public class Cow extends Animal {
 
     @Override
     public AnimalKind getKind() {
-        AnimalKind Kind = AnimalKind.COW;
-        return (Kind);
+        return AnimalKind.COW;
     }
 
     @Override
     public FoodKind getFoodKind() {
-        FoodKind FoodKind = FoodKind.HAY;
-        return FoodKind;
+        return FoodKind.HAY;
     }
+
     @Override
-    public double getFoodCoeff(){
+    public double getFoodCoeff() {
         FoodCoeff = 0.05;
         return FoodCoeff;
+    }
 }
