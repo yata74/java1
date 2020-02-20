@@ -25,12 +25,12 @@ public class Animal {
         return weight;
     }
 
-    // возращаем название животного
+    // возвращаем название животного
     public AnimalKind getKind() {
         return AnimalKind.ANIMAL;
     }
 
-    // возращаем вид корма
+    // возвращаем вид корма
     public FoodKind getFoodKind() {
         return FoodKind.UNKNOWN;
     }
@@ -41,13 +41,13 @@ public class Animal {
     }
 
 
-    // возращаем коэффициент
+    // возвращаем коэффициент
     public double getFoodCoeff() {
         double FoodCoeff = 0.02;
         return FoodCoeff;
     }
 
-    // расчитываем вес еды
+    // рассчитываем вес еды
     public double calculateFoodWeight() {
         double FoodWeight = getWeight() * getFoodCoeff();
         return FoodWeight;

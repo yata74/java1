@@ -25,14 +25,14 @@ public class ComplexNum {
         return result;
     }
     public ComplexNum div(ComplexNum num){
-        ComplexNum result = new ComplexNum((a*num.a+b*num.b)/(num.a*num.a+num.b*num.b),
-                (b*num.a-a*num.b)/num.a*num.a+num.b*num.b);
+        ComplexNum result = new ComplexNum((a*num.a + b*num.b) / (num.a*num.a + num.b*num.b),
+                (b*num.a - a*num.b) / (num.a*num.a+num.b*num.b));
         return result;
     }
 
     public static void main(String[] args) {
-        ComplexNum c1 = new ComplexNum(3,4);
-        ComplexNum c2 = new ComplexNum(5,6);
+        ComplexNum c1 = new ComplexNum(1000,1000);
+        ComplexNum c2 = new ComplexNum(100,100);
         System.out.println(c1);
         System.out.println(c2);
         ComplexNum c3 = c1.add(c2);
