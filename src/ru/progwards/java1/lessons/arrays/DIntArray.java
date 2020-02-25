@@ -2,10 +2,10 @@ package ru.progwards.java1.lessons.arrays;
 
 import java.util.Arrays;
 
-public class DintArray {
+public class DIntArray {
     private int[] mass;
 
-    public DintArray() {
+    public DIntArray() {
     }
 
     public void add(int num) {
@@ -26,7 +26,7 @@ public class DintArray {
                 mass2[i] = num;
             } else mass2[i] = mass[i - 1];
         }
-        System.out.println("mass2" + Arrays.toString(mass2));
+        System.out.println(Arrays.toString(mass2));
 
     }
 
@@ -47,7 +47,7 @@ public class DintArray {
 
 
     public static void main(String[] args){
-        DintArray mass4 = new  DintArray();
+        DIntArray mass4 = new  DIntArray();
         mass4.mass = new int[]{3, 6, 7,9,1};
         mass4.add(5);
         mass4.atInsert(3,8);
