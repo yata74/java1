@@ -28,6 +28,6 @@ public class Eratosthenes {
     public static void main(String[] args){
     Eratosthenes Eratosthenes1 = new Eratosthenes(20);
         System.out.println(Arrays.toString(Eratosthenes1.sieve));
-        System.out.println(Eratosthenes1.isSimple(10));
+        System.out.println(Eratosthenes1.isSimple(1));
 }
 }
