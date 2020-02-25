@@ -47,12 +47,12 @@ public class DIntArray {
 
 
     public static void main(String[] args){
-        DIntArray mass4 = new  DIntArray();
-        mass4.mass = new int[]{3, 6, 7,9,1};
-        mass4.add(5);
-        mass4.atInsert(3,8);
-        mass4.atDelete(2);
-        int a= mass4.at(3);
+        DIntArray mass = new  DIntArray();
+        mass.mass = new int[]{3, 6, 7,9,1};
+        mass.add(5);
+        mass.atInsert(3,8);
+        mass.atDelete(2);
+        int a= mass.at(3);
         System.out.println("на позиции 3 число "+ a);
     }
 
