@@ -5,16 +5,16 @@ public class SumBits {
         int sum = 0;
         while (value != 0b00000000){
             byte x = 0b00000001;
-            x = (byte) (value & x);
+            x &= value;
             if (x == 0b00000001) {
                 sum = sum + 1;
             }
-             value = (byte) (value >>> 1);
+             value >>>= 1;
         }
         return sum;
     }
     public static void main(String[] args) {
-        int a = sumBits((byte) 0b011111);
+        int a = sumBits((byte) 0b010011);
         System.out.println(a);
     }
 }
