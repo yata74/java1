@@ -3,7 +3,7 @@ package ru.progwards.java1.lessons.arrays;
 import java.util.Arrays;
 
 public class DIntArray {
-    private int[] mass;
+    private int[] mass = {3, 6, 7,9,1};
 
     public DIntArray() {
     }
@@ -48,7 +48,7 @@ public class DIntArray {
 
     public static void main(String[] args){
         DIntArray mass = new  DIntArray();
-        mass.mass = new int[]{3, 6, 7,9,1};
+       // mass.mass = new int[]{3, 6, 7,9,1};
         mass.add(5);
         mass.atInsert(3,8);
         mass.atDelete(2);
