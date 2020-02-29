@@ -27,7 +27,8 @@ public class DIntArray {
                 mass2[i] = num;
             } else mass2[i] = mass[i - 1];
         }
-        System.out.println(Arrays.toString(mass2));
+        mass = Arrays.copyOf(mass2,mass2.length);
+        System.out.println(Arrays.toString(mass));
 
     }
 
@@ -38,7 +39,8 @@ public class DIntArray {
                 mass3[i] = mass[i];
             } else mass3[i] = mass[i + 1];
         }
-        System.out.println(Arrays.toString(mass3));
+        mass = Arrays.copyOf(mass3,mass3.length);
+        System.out.println(Arrays.toString(mass));
     }
 
     public int at(int pos) {
