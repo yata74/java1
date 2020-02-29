@@ -42,7 +42,7 @@ public class DIntArray {
     }
 
     public int at(int pos) {
-        int res = mass[pos-1];
+        int res = mass[pos];
         return res;
     }
 
