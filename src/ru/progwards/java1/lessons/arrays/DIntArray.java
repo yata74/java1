@@ -3,7 +3,7 @@ package ru.progwards.java1.lessons.arrays;
 import java.util.Arrays;
 
 public class DIntArray {
-    private int[] mass = {3, 6, 7,9,1};
+    private int[] mass;
 
     public DIntArray() {
     }
@@ -14,7 +14,8 @@ public class DIntArray {
             mass1[i] = mass[i];
         }
         mass1[mass1.length - 1] = num;
-        System.out.println(Arrays.toString(mass1));
+        mass = Arrays.copyOf(mass1,mass1.length);
+        System.out.println(Arrays.toString(mass));
     }
 
     public void atInsert(int pos, int num) {
@@ -41,17 +42,21 @@ public class DIntArray {
     }
 
     public int at(int pos) {
-        int res = mass[pos];
+        int res = mass[pos-1];
         return res;
     }
 
 
     public static void main(String[] args){
         DIntArray mass = new  DIntArray();
-       // mass.mass = new int[]{3, 6, 7,9,1};
+        mass.mass = new int[]{};
         mass.add(5);
+        mass.add(51);
+        mass.add(2);
+        mass.add(6);
+        mass.add(11);
         mass.atInsert(3,8);
-        mass.atDelete(2);
+        mass.atDelete(3);
         int a= mass.at(3);
         System.out.println("на позиции 3 число "+ a);
     }
