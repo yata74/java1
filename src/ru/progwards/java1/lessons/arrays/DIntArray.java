@@ -48,7 +48,6 @@ public class DIntArray {
         return res;
     }
 
-
     public static void main(String[] args){
         DIntArray mass = new  DIntArray();
         mass.add(5);
@@ -61,5 +60,4 @@ public class DIntArray {
         int a= mass.at(3);
         System.out.println("на позиции 3 число "+ a);
     }
-
 }

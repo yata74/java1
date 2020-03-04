@@ -12,6 +12,6 @@ public class CheckBit {
         }return 0;
     }
     public static void main(String[] args) {
-        System.out.println(checkBit((byte) 0b01110111,5));
+        System.out.println(checkBit((byte) 0b01110101,1));
     }
 }
