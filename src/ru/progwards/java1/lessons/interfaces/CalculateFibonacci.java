@@ -1,9 +1,7 @@
 package ru.progwards.java1.lessons.interfaces;
 
 public class CalculateFibonacci {
-    private static CacheInfo lastFibo;
-
-
+    private static CacheInfo lastFibo=null;
     //рассчитываем число Фибоначи
     public static int fiboNumber(int n) {
 
@@ -18,15 +16,12 @@ public class CalculateFibonacci {
                 sum = b1 + b2;
                 i++;
             } while (i <= n);
-            System.out.println("Расчет");
-            lastFibo.fibo = sum;
+             lastFibo = new CacheInfo(n,sum);
             return sum;
         }else {
-            System.out.println("повтор");
             return lastFibo.fibo;
 
         }
-
     }
 
     //вложенный класс
@@ -47,10 +42,12 @@ public class CalculateFibonacci {
             lastFibo = null;
         }
 
+
+
     }
     public static void main(String[] args){
-        System.out.println(fiboNumber(7));
-        System.out.println(fiboNumber(3));
+        System.out.println(fiboNumber(10));
+        System.out.println(fiboNumber(10));
         System.out.println(fiboNumber(3));
 
     }
