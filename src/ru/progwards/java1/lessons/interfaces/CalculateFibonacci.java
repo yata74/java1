@@ -16,13 +16,22 @@ public class CalculateFibonacci {
                 sum = b1 + b2;
                 i++;
             } while (i <= n);
-             lastFibo = new CacheInfo(n,sum);
+             lastFibo = new CacheInfo (n,sum);
             return sum;
         }else {
             return lastFibo.fibo;
 
         }
     }
+
+
+    public static CacheInfo getLastFibo() {
+        return lastFibo;
+    }
+    public static void clearLastFibo() {
+        lastFibo = null;
+    }
+
 
     //вложенный класс
     public static class CacheInfo {
@@ -34,20 +43,13 @@ public class CalculateFibonacci {
             this.fibo = fibo;
         }
 
-        public static CacheInfo getLastFibo() {
-            return lastFibo;
-        }
-
-        public static void clearLastFibo() {
-            lastFibo = null;
-        }
-
 
     }
     public static void main(String[] args){
+        clearLastFibo();
         System.out.println(fiboNumber(10));
-        System.out.println(fiboNumber(10));
-        System.out.println(fiboNumber(3));
-
+        System.out.println(fiboNumber(7));
+        System.out.println(fiboNumber(7));
+        System.out.println(getLastFibo());
     }
 }
