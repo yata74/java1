@@ -13,7 +13,7 @@ public class IntInteger extends AbsInteger {
     }
 
     public String toString(){
-        return ("Результат типа int = " + num);
+        return String.valueOf(num);
 
     }
 }
