@@ -15,7 +15,7 @@ public class ShortInteger extends AbsInteger {
     }
 
     public String toString() {
-        return ("Результат типа short = " + num);
+        return String.valueOf(num);
 
     }
 }
