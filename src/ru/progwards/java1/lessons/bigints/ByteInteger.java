@@ -14,7 +14,7 @@ public class ByteInteger extends AbsInteger {
     }
 
     public String toString(){
-        return ("Результат типа byte = "+ num);
+        return String.valueOf(num);
 
     }
 }
