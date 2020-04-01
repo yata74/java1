@@ -2,7 +2,7 @@ package ru.progwards.java1.lessons.bigints;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.Arrays;
+
 
 public class BigAlgebra {
      public static BigDecimal fastPow(BigDecimal num, int pow) {
