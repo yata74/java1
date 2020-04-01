@@ -38,12 +38,10 @@ public class ArrayInteger {
             if (result > 9) {
                 j = 1;
                 result = (byte) (result - 10);
-                digits[i] = result;
             } else {
                 j = 0;
-                digits[i] = result;
             }
-            System.out.println(result);
+            digits[i] = result;
         }
         if (j==1){
            Arrays.fill(digits,(byte)0);
@@ -54,7 +52,7 @@ public class ArrayInteger {
 
     public static void main(String[] args) {
         ArrayInteger mas1 = new ArrayInteger(5);
-        BigInteger a1 = new BigInteger("98159");
+        BigInteger a1 = new BigInteger("9959");
         mas1.fromInt(a1);
         BigInteger a2 = mas1.toInt();
         System.out.println(a2);
