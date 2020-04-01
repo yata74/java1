@@ -55,15 +55,15 @@ public class ArrayInteger {
     public static void main(String[] args) {
         ArrayInteger mas1 = new ArrayInteger(5);
         BigInteger a1 = new BigInteger("98159");
-          mas1.fromInt(a1);
-          BigInteger a2 = mas1.toInt();
-            System.out.println(a2);
-            ArrayInteger mas2 = new ArrayInteger(5);
-            BigInteger a4 = new BigInteger("13122");
-            mas2.fromInt(a4);
-            BigInteger a6 = mas2.toInt();
+        mas1.fromInt(a1);
+        BigInteger a2 = mas1.toInt();
+        System.out.println(a2);
+        ArrayInteger mas2 = new ArrayInteger(5);
+        BigInteger a4 = new BigInteger("13122");
+        mas2.fromInt(a4);
+        BigInteger a6 = mas2.toInt();
         System.out.println(a6);
-            boolean a5 = mas1.add(mas2);
+        boolean a5 = mas1.add(mas2);
         System.out.println(a5);
     }
 }
