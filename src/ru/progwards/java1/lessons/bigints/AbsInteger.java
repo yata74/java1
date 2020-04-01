@@ -13,7 +13,7 @@ public abstract class AbsInteger {
       ShortInteger res = new ShortInteger((short) result);
       return res;
     } else {
-      IntInteger res = new IntInteger( result);
+      IntInteger res = new IntInteger(result);
       return res;
     }
   }
