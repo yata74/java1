@@ -31,8 +31,16 @@ public class ArrayInteger {
         }
         //сумма двух массивов
     boolean add(ArrayInteger num) {
+        int len;
+        if (this.digits.length < num.digits.length){
+            this.digits = Arrays.copyOf(this.digits,num.digits.length);
+            len = num.digits.length;
+        }else {
+            num.digits = Arrays.copyOf(num.digits,this.digits.length);
+            len = this.digits.length;
+        }
         int j = 0;
-        for (int i = 0; i < digits.length; i++) {
+        for (int i = 0; i <len; i++) {
             byte result = (byte) (this.digits[i] + num.digits[i] + (byte) j);
             if (result > 9) {
                 j = 1;
@@ -50,13 +58,13 @@ public class ArrayInteger {
     }
 
     public static void main(String[] args) {
-        ArrayInteger mas1 = new ArrayInteger(5);
-        BigInteger a1 = new BigInteger("9959");
+        ArrayInteger mas1 = new ArrayInteger(6);
+        BigInteger a1 = new BigInteger("190996");
         mas1.fromInt(a1);
         BigInteger a2 = mas1.toInt();
         System.out.println(a2);
-        ArrayInteger mas2 = new ArrayInteger(5);
-        BigInteger a4 = new BigInteger("13122");
+        ArrayInteger mas2 = new ArrayInteger(6);
+        BigInteger a4 = new BigInteger("998272");
         mas2.fromInt(a4);
         BigInteger a6 = mas2.toInt();
         System.out.println(a6);
