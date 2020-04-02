@@ -34,7 +34,6 @@ public class ArrayInteger {
         int j = 0;
         for (int i = 0; i < digits.length; i++) {
             byte result = (byte) (this.digits[i] + num.digits[i] + (byte) j);
-
             if (result > 9) {
                 j = 1;
                 result = (byte) (result - 10);

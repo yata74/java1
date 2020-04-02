@@ -7,8 +7,9 @@ package ru.progwards.java1.lessons.abstractnum;
 //    }
 //    @Override
 //    public Number volume(){
-//        return segment.mul(segment).mul(segment).div (new3;
+//  //TODO      return segment.mul(segment).mul(segment).div(3);
 //    }
+//
 //    @Override
 //    public String toString(){
 //        return String.valueOf(volume());
