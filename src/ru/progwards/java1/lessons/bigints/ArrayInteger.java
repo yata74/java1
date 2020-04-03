@@ -36,6 +36,7 @@ public class ArrayInteger {
             Arrays.fill(digits, (byte) 0);
             return false;
         } else {
+            num.digits = Arrays.copyOf(num.digits,this.digits.length);
             int j = 0;
             for (int i = 0; i < this.digits.length; i++) {
                 byte result = (byte) (this.digits[i] + num.digits[i] + (byte) j);
