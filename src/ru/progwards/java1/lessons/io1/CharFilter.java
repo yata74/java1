@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.util.Scanner;
 
 public class CharFilter {
-    public static void filterFile(String inFileName, String outFileName, String filter)throws Exception{
+    public static void filterFile(String inFileName, String outFileName, String filter){
         try {
             FileReader file1 = new FileReader(inFileName);//открываем файл для чтения
             Scanner scanner = new Scanner(file1);
@@ -34,7 +34,7 @@ public class CharFilter {
             System.out.println(e);
         }
     }
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)  {
         try {
             String filter = "-,. ()";
             filterFile("text1.txt", "text2.txt", filter);
