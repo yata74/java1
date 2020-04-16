@@ -17,7 +17,7 @@ public class Coder {
                     String str = scanner.nextLine();
                     char mass[] = str.toCharArray();
                     for (int i = 0; i < mass.length; i++) {
-                        char a1 = code[mass[i]];
+                        char a1 = code[(int)mass[i]];
                         file2.write(a1);
                     }
                 }
