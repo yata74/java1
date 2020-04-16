@@ -33,5 +33,4 @@ public class LineCount {
             System.out.println(e);;
         }
     }
-
 }
