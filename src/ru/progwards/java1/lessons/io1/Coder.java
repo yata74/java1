@@ -2,11 +2,10 @@ package ru.progwards.java1.lessons.io1;
 
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Coder {
-    public static void codeFile(String inFileName, String outFileName, char[] code, String logName) throws Exception {
+    public static void codeFile(String inFileName, String outFileName, char[] code, String logName)  {
 
         try {
             FileReader file1 = new FileReader(inFileName);
