@@ -14,13 +14,15 @@ public class Coder {
 
             try {
                 while (scanner.hasNextLine()) {
-                    String str = scanner.nextLine();
-                    char mass[] = str.toCharArray();
-                    for (int i = 0; i < mass.length; i++) {
-                        char a1 = code[(int)mass[i]];
+ //                   String str = scanner.nextLine();
+//                    char mass[] = str.toCharArray();
+//                    for (int i = 0; i < mass.length; i++) {
+//                        char a1 = code[(int)mass[i]];
+                    int simvol = file1.read();
+                    int a1 = code[simvol];
                         file2.write(a1);
                     }
-                }
+
             } finally {
                 file1.close();
                 file2.close();
