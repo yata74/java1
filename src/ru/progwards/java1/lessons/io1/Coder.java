@@ -24,15 +24,14 @@ public class Coder {
                 reader.close();
             }
         } catch (Exception e) {
-            LogFileWrite.log(e.getMessage());
+            LogFileWrite.log(logName,e.getMessage());
         }
     }
 
 
     public static class LogFileWrite {
-        private static String logName;
 
-        public static boolean log(String str) {
+        public static boolean log(String logName,String str) {
             try {
                 FileWriter logFile = new FileWriter(logName, true);
                 try {
