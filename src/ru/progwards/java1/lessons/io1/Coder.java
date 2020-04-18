@@ -1,33 +1,27 @@
 package ru.progwards.java1.lessons.io1;
 
-import java.io.FileReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Coder {
     public static void codeFile(String inFileName, String outFileName, char[] code, String logName)  {
 
         try {
-            FileReader file1 = new FileReader(inFileName);
-            Scanner scanner = new Scanner(file1);
-            FileWriter file2 = new FileWriter(outFileName);
+            FileInputStream reader = new FileInputStream(inFileName);
+            FileOutputStream writer = new FileOutputStream(outFileName);
 
             try {
-                while (scanner.hasNextLine()) {
-                    String str = scanner.nextLine();
-                    char mass[] = str.toCharArray();
-                    for (int i = 0; i < mass.length; i++) {
-                        mass[i] = code[mass[i]];
-//                    int simvol = file1.read();
-//                    int a1 = code[simvol];
-                    }
-                        file2.write(mass);
+                byte[] bytes = reader.readAllBytes();
+                for (int i = 0; i < bytes.length; i++)
+                    bytes[i] = (byte) code[bytes[i]];
+                writer.write(bytes);
 
-                }
-            } finally {
-                file1.close();
-                file2.close();
+            } finally
+            {
+                writer.close();
+                reader.close();
             }
         } catch (Exception e) {
             LogFileWrite.log(e.getMessage());
