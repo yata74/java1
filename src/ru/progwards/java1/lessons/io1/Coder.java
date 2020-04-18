@@ -2,6 +2,7 @@ package ru.progwards.java1.lessons.io1;
 
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Coder {
@@ -14,15 +15,16 @@ public class Coder {
 
             try {
                 while (scanner.hasNextLine()) {
- //                   String str = scanner.nextLine();
-//                    char mass[] = str.toCharArray();
-//                    for (int i = 0; i < mass.length; i++) {
-//                        char a1 = code[(int)mass[i]];
-                    int simvol = file1.read();
-                    int a1 = code[simvol];
-                        file2.write(a1);
+                    String str = scanner.nextLine();
+                    char mass[] = str.toCharArray();
+                    for (int i = 0; i < mass.length; i++) {
+                        mass[i] = code[mass[i]];
+//                    int simvol = file1.read();
+//                    int a1 = code[simvol];
                     }
+                        file2.write(mass);
 
+                }
             } finally {
                 file1.close();
                 file2.close();
@@ -31,6 +33,7 @@ public class Coder {
             LogFileWrite.log(e.getMessage());
         }
     }
+
 
     public static class LogFileWrite {
         private static String logName;
@@ -50,4 +53,18 @@ public class Coder {
             return true;
         }
     }
-}
+
+
+        public static void main(String[] args)
+        {
+//=====
+            char[] code = new char[256];
+            Arrays.fill(code, '*');
+
+            for (int i = 48; i < 58; i++)
+                code[i] = (char) (i + 16);
+//-----
+
+            codeFile("text1.txt", "text2.txt", code, "log.txt");
+        }
+    }
