@@ -36,7 +36,7 @@ public class CharFilter {
     public static void main(String[] args) {
         try {
             String filter = "-,. ()";
-            filterFile("text1.txt", "null", filter);
+            filterFile("text1.txt", "text2.txt", filter);
         } catch (Exception e) {
             System.out.println(e);
         }
