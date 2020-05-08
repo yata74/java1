@@ -26,7 +26,7 @@ public class PhoneNumber {
     public static String desyatoc(String cif) {
         String res ="";
         char [] mass =cif.toCharArray();
-        if (mass[0]=='8'){
+        if (mass[0]=='8'||mass[0]=='7'){
             for (int i=1;i<mass.length;i++){
                 res += mass[i];
             }
@@ -35,7 +35,7 @@ public class PhoneNumber {
     }
     public static void main(String[] args) {
         try {
-            System.out.println(format(desyatoc(cifry("8--091-51-79"))));
+            System.out.println(format(desyatoc(cifry("7(774)449-04-36"))));
         }catch (Exception e){
             System.out.println(e);
         }
