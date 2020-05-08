@@ -7,6 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 public class Test6 {
+    //меняем каждый 10 символ на *
     public static String setStars(String filename) throws IOException {
         String res = "";
         long pos = 9L;

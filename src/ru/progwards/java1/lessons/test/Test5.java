@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Test5 {
+    // меняем слова в строке в обратном порядке
     public static String invertWords(String sentence){
         String[] mass = sentence.split(" ");
         int i;
