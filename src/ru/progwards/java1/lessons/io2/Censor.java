@@ -52,10 +52,9 @@ public class Censor {
 
                 }
 
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             throw new CensorException(inoutFileName);
-        } catch (IOException e) {
-            e.printStackTrace();
+
         }
     }
         public static void main(String[] args) {

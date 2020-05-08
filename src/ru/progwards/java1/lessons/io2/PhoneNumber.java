@@ -6,7 +6,7 @@ public class PhoneNumber {
     // возвращаю номер в формате
     public static String format(String phone) throws Exception{
         try {
-            return ("+7(" + phone.substring(0, 3) + ")" + phone.substring(3, 6) + "-" + phone.substring(6, 8) + "-" + phone.substring(8));
+            return ("+7(" + phone.substring(0, 3) + ")" + phone.substring(3, 6) + "-" + phone.substring(6, 8) + phone.substring(8));
         }catch (Exception e){
             return ("Неправильно набран номер");
         }
@@ -35,7 +35,7 @@ public class PhoneNumber {
     }
     public static void main(String[] args) {
         try {
-            System.out.println(format(desyatoc(cifry("7(774)449-04-36"))));
+            System.out.println(format(desyatoc(cifry("7 807 222 61 03"))));
         }catch (Exception e){
             System.out.println(e);
         }
