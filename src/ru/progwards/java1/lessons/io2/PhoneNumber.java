@@ -35,7 +35,7 @@ public class PhoneNumber {
     }
     public static void main(String[] args) {
         try {
-            System.out.println(format(desyatoc(cifry("78973191532"))));
+            System.out.println(format(desyatoc(cifry("7(458)394-72-96"))));
         }catch (Exception e){
             System.out.println(e);
         }

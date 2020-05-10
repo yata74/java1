@@ -11,7 +11,6 @@ public class Censor {
     public static class CensorException extends RuntimeException{
         public String fileName="";
         public CensorException(String fileName){
-            super(" Произошла ошибка ");
             this.fileName = fileName;
         }
         @Override
