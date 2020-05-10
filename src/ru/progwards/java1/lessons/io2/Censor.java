@@ -20,7 +20,7 @@ public class Censor {
         }
     }
 
-    public static void censorFile(String inoutFileName, String[] obscene) {
+    public static void censorFile(String inoutFileName, String[] obscene) throws CensorException {
         try (RandomAccessFile file = new RandomAccessFile(inoutFileName, "rw")) {
                 long pos = 0L;
                 while (pos < file.length()) {
