@@ -15,7 +15,7 @@ public class Censor {
         }
         @Override
     public String getMessage(){
-            return fileName +" : " + super.getMessage();
+            return fileName +":" + super.getMessage();
         }
     }
 
