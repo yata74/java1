@@ -6,6 +6,7 @@ public class PhoneNumber {
     // возвращаю номер в формате
     public static String format(String phone) throws Exception{
         try {
+            phone = desyatoc(cifry(phone));
             return ("+7(" + phone.substring(0, 3) + ")" + phone.substring(3, 6) + "-" + phone.substring(6, 8) + phone.substring(8));
         }catch (Exception e){
             return ("Неправильно набран номер");
@@ -35,7 +36,7 @@ public class PhoneNumber {
     }
     public static void main(String[] args) {
         try {
-            System.out.println(format(desyatoc(cifry("85853888091"))));
+            System.out.println(format("85853888091"));
         }catch (Exception e){
             System.out.println(e);
         }
