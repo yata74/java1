@@ -1,44 +1,52 @@
 package ru.progwards.java1.lessons.io2;
 
-import java.util.Arrays;
-
 public class PhoneNumber {
-    // возвращаю номер в формате
-    public static String format(String phone) throws Exception{
-        try {
-            phone = desyatoc(cifry(phone));
-            return ("+7(" + phone.substring(0, 3) + ")" + phone.substring(3, 6) + "-" + phone.substring(6, 8) + phone.substring(8));
-        }catch (Exception e){
-            return ("Неправильно набран номер");
+
+    public static class InvalidException extends RuntimeException{
+        public String number="";
+        public InvalidException(String number){
+            super("Неправильно набран номер: ");
+            this.number = number;
+        }
+        @Override
+        public String getMessage(){
+            return super.getMessage()+ number;
         }
     }
-    //возвращаю только цифры
-    public static String cifry(String numer) {
-        String num = "";
-        char [] cifra = numer.toCharArray();
-        for (int i=0; i< cifra.length; i++ ) {
-            if (Character.isDigit(cifra[i])) {
-                num += cifra[i];
+
+        // возвращаю номер в формате
+        public static String format(String phone) {
+            String phone1 = "";
+            char[] cifra = phone.toCharArray();
+            for (int i = 0; i < cifra.length; i++) {
+                if (Character.isDigit(cifra[i])) {
+                    phone1 = String.valueOf(cifra[i]);
+                }
+            }
+            char[] mass = phone1.toCharArray();
+            if (mass[0] == '8' || mass[0] == '7') {
+                for (int i = 1; i < 11; i++) {
+                    phone1 += mass[i];
+                }
+            }
+            if (phone1.length() != 10) {
+                throw new InvalidException(phone);
+                //    return ("Не правильно набран номер " + phone);
+            } else {
+
+                return ("+7(" + phone1.substring(0, 3) + ")" + phone1.substring(3, 6) + "-" + phone1.substring(6, 8) + phone1.substring(8));
             }
         }
-        return num;
-    }
-    //возвращаю 10 значащих цифр
-    public static String desyatoc(String cif) {
-        String res ="";
-        char [] mass =cif.toCharArray();
-        if (mass[0]=='8'||mass[0]=='7'){
-            for (int i=1;i<mass.length;i++){
-                res += mass[i];
+
+        public static void main(String[] args) {
+            try {
+                System.out.println(format("7(954)938-84-9011"));
+            } catch (Exception e) {
+                System.out.println(e);
             }
         }
-        return res;
     }
-    public static void main(String[] args) {
-        try {
-            System.out.println(format("85853888091"));
-        }catch (Exception e){
-            System.out.println(e);
-        }
-    }
-}
+
+
+
+
