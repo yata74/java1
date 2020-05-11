@@ -20,27 +20,28 @@ public class PhoneNumber {
             char[] cifra = phone.toCharArray();
             for (int i = 0; i < cifra.length; i++) {
                 if (Character.isDigit(cifra[i])) {
-                    phone1 = String.valueOf(cifra[i]);
+                    phone1 += cifra[i];
                 }
             }
+            String phone2="";
             char[] mass = phone1.toCharArray();
             if (mass[0] == '8' || mass[0] == '7') {
                 for (int i = 1; i < 11; i++) {
-                    phone1 += mass[i];
+                    phone2 += mass[i];
                 }
             }
-            if (phone1.length() != 10) {
+            if (phone2.length() != 10) {
                 throw new InvalidException(phone);
                 //    return ("Не правильно набран номер " + phone);
             } else {
 
-                return ("+7(" + phone1.substring(0, 3) + ")" + phone1.substring(3, 6) + "-" + phone1.substring(6, 8) + phone1.substring(8));
+                return ("+7(" + phone2.substring(0, 3) + ")" + phone2.substring(3, 6) + "-" + phone2.substring(6, 8) + phone2.substring(8));
             }
         }
 
         public static void main(String[] args) {
             try {
-                System.out.println(format("7(954)938-84-9011"));
+                System.out.println(format("7(849)4368655"));
             } catch (Exception e) {
                 System.out.println(e);
             }
