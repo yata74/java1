@@ -38,22 +38,29 @@ public class SeaBattleAlg {
                 Arrays.fill(pole[i],' ');
             }
         }
-
         public void battleAlgorithm(SeaBattle seaBattle) {
-            //
+            // сколько клеточек-целей подбито.
             int cel=0;
+            init(seaBattle);
             // пример алгоритма:
             // стрельба по всем квадратам поля полным перебором
             for (int y = 0; y < seaBattle.getSizeX(); y++) {
                 for (int x = 0; x < seaBattle.getSizeY(); x++) {
+                    if (pole[x][y]==' '){
                     SeaBattle.FireResult fireResult = seaBattle.fire(x, y);
-                    if (fireResult!=FireResult.MISS){
-                        cel+=1;
-                        if (cel>=20)
-                            return;
-                        if (fireResult==FireResult.HIT){
 
+                    if (fireResult!=FireResult.MISS) {
+                        pole[x][y] = '*';
+
+                    }
+                        if (fireResult==FireResult.HIT) {
+                            cel += 1;
                         }
+                         if (fireResult==FireResult.DESTROYED){
+                             cel += 1;
+                         }
+                        if (cel >= 20)
+                            return;
                     }
                 }
             }
