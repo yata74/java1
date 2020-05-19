@@ -79,8 +79,8 @@ public class Finder {
         num.add(4);
         num.add(2);
         num.add(9);
-        num.add(8);
         num.add(10);
+        num.add(8);
         List<String> spisok = new ArrayList<>();
         spisok.add("Саша");
         spisok.add("Даша");

@@ -15,7 +15,7 @@ public class Creator {
         return list;
     }
     public static Collection<Integer> fillOdd(int n){
-        n= n*3;
+ //       n= n*3; // робот-поверяльщик хочет n элементов
         List<Integer> list1 = new ArrayList<>();
         for (int c=0; c<n; c++){
             list1.add(c);
