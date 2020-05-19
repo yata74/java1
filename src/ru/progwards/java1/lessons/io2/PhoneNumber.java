@@ -30,7 +30,7 @@ public class PhoneNumber {
                     phone2 += mass[i];
                 }
             }
-         
+
             if (phone2.length() != 10) {
                 throw new InvalidException(phone);
                 //    return ("Не правильно набран номер " + phone);

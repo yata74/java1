@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Test6 {
     //меняем каждый 10 символ на *
-    public static String setStars(String filename) throws IOException {
+    public static String setStars(String filename)  {
         String res = "";
         long pos = 9L;
         try {
@@ -32,8 +32,8 @@ public class Test6 {
 
     public static void main(String[] args) {
         try {
-            System.out.println(setStars("????"));
-        } catch (IOException e) {
+            System.out.println(setStars("???"));
+        } catch (Exception e) {
             System.out.println(e);
             ;
         }
