@@ -31,12 +31,11 @@ public class Creator {
         List<Integer> list2 = new ArrayList<>();
         n = n*3;
         List<Integer> num2 = new ArrayList<>(3);
-        for (int y=0;y<n; y++){
-            int cif =1;
-            for (int z=1; z<4; z++){
-                num2.add(cif*y);
-                cif =cif*y;
-            }
+        for (int y=0;y<n;) {
+            num2.add(y);
+            num2.add(y*y);
+            num2.add(y*y*y);
+            y += 3;
             list2.addAll(num2);
             num2.clear();
         }
@@ -48,12 +47,12 @@ public class Creator {
         }
             System.out.println(" ");
 
-        for (Integer i : fillOdd(3)) {
+        for (Integer i : fillOdd(10)) {
             System.out.print(i + " ");
         }
             System.out.println(" ");
 
-        for (Integer i : fill3(4)){
+        for (Integer i : fill3(3)){
             System.out.print(i+" ");
         }
     }
