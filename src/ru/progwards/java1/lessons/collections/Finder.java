@@ -26,7 +26,7 @@ public class Finder {
     public static Collection<Integer> findLocalMax(Collection<Integer> numbers) {
         List<Integer> numbers2 = new ArrayList<>(numbers);
         List<Integer> maxs = new ArrayList<>();
-        for (int i = 0; i < numbers2.size() - 1; i++) {
+        for (int i = 0; i < numbers2.size() - 2; i++) {
             if (numbers2.get(i) < numbers2.get(i + 1) && numbers2.get(i + 1) > numbers2.get(i + 2)) {
                 maxs.add(numbers2.get(i + 1));
             }
@@ -75,10 +75,12 @@ public class Finder {
         num.add(5);
         num.add(1);
         num.add(6);
-        num.add(0);
         num.add(3);
         num.add(4);
         num.add(2);
+        num.add(9);
+        num.add(8);
+        num.add(10);
         List<String> spisok = new ArrayList<>();
         spisok.add("Саша");
         spisok.add("Даша");
