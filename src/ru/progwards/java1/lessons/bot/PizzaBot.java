@@ -36,8 +36,8 @@
 //            ApiContextInitializer.init();
 //
 //            PizzaBot bot = new PizzaBot();
-//            bot.username = "Pizza24javabot";
-//            bot.token = "904923800:AAE5CjsVcpxBJfT_DG7u4T9rua42sa_nIkY";
+//            bot.username = "ShopBot74bot";
+//            bot.token = "1014994194:AAFw2xYP-knzzoE9OFV9nl2M4UXWLaBA__c";
 //
 //            bot.addTags("привет", "привет, здасьте, здравствуйте, добр, день, вечер, утро, hi, hello");
 //            bot.addTags("конец", "конец, все, стоп, нет");
