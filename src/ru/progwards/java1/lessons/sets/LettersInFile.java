@@ -7,17 +7,21 @@ public class LettersInFile {
     public static String process(String fileName) throws Exception{
         FileReader file1 = new FileReader(fileName);//открываем файл для чтения
         Scanner scanner = new Scanner(file1);
-        TreeSet<Character> resStr = new TreeSet<>();
+        TreeSet<Character> res = new TreeSet<>();
+        String resStr ="";
         while (scanner.hasNext()){
             String slovo = scanner.next();
             char []mass = slovo.toCharArray();
             for (int i=0; i<mass.length; i++){
                 if (Character.isLetter(mass[i])){
-                resStr.add(mass[i]);
+                res.add(mass[i]);
                 }
             }
         }
-        return String.valueOf(resStr);
+        for (Character j: res){
+            resStr += j;
+        }
+        return resStr;
     }
 
     public static void main(String[] args) {
