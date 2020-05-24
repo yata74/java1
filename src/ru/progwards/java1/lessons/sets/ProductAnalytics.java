@@ -9,34 +9,39 @@ public class ProductAnalytics {
         this.products = products;
         this.shops = shops;
     }
-    public static class Product{
-        private String code;
-        public Product(String code){
-            this.code=code;
-        }
 
-        public String getCode(){
-            return code;
-        }
-        public String toString(){
-            return ("Артикуль: "+ getCode());
-        }
+    public ProductAnalytics() {
+
     }
-    public static class Shop{
-        private List<Product> productsmag;
-        public Shop(List<Product> productsmag){
-            this.productsmag=productsmag;
-        }
-        public List<Product> getProducts(){
-            return productsmag;
-        }
-    }
+
+//    public static class Product{
+//        private String code;
+//        public Product(String code){
+//            this.code=code;
+//        }
+//
+//        public String getCode(){
+//            return code;
+//        }
+//        public String toString(){
+//            return ("Артикуль: "+ getCode());
+//        }
+//    }
+//    public static class Shop{
+//        private List<Product> productsmag;
+//        public Shop(List<Product> productsmag){
+//            this.productsmag=productsmag;
+//        }
+//        public List<Product> getProducts(){
+//            return productsmag;
+//        }
+//    }
     public Set<Product> existInAll(){
         Set<Product> res = new HashSet<>();
         for (Product name:products){
             int ind=0; //в скольких магазинах есть этот товар
             for (Shop mag:shops){
-                if (mag.productsmag.contains(name)){
+                if (mag.getProducts().contains(name)){
                     ind+=1;
                 }
             }
@@ -51,7 +56,7 @@ public class ProductAnalytics {
         for (Product name:products){
             int ind=0; //в скольких магазинах есть этот товар
             for (Shop mag:shops){
-                if (mag.productsmag.contains(name)){
+                if (mag.getProducts().contains(name)){
                     ind+=1;
                 }
             }
@@ -66,7 +71,7 @@ public class ProductAnalytics {
         for (Product name:products){
             int ind=0; //в скольких магазинах есть этот товар
             for (Shop mag:shops){
-                if (mag.productsmag.contains(name)){
+                if (mag.getProducts().contains(name)){
                     ind+=1;
                 }
             }
@@ -81,7 +86,7 @@ public class ProductAnalytics {
         for (Product name:products){
             int ind=0; //в скольких магазинах есть этот товар
             for (Shop mag:shops){
-                if (mag.productsmag.contains(name)){
+                if (mag.getProducts().contains(name)){
                     ind+=1;
                 }
             }
