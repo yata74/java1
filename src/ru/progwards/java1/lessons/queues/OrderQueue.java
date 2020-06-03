@@ -16,11 +16,11 @@ public class OrderQueue {
 
     //добавление в соответствующий стек
     public void add(Order order) {
-        if (order.getSum() <= 1000) {
+        if (order.getSum() <= 10000) {
             tree.offer(order);
-        } else if (order.getSum() <= 2000) {
+        } else if (order.getSum() <= 20000) {
             dwa.offer(order);
-        } else if (order.getSum() > 2000) {
+        } else if (order.getSum() > 20000) {
             odin.offer(order);
         }
     }
@@ -42,15 +42,15 @@ public class OrderQueue {
 
     public static void main(String[] args) {
         OrderQueue ob = new OrderQueue();
-        Order a1 = new Order(123);
-        Order a2 = new Order(134);
-        Order a3 = new Order(156);
+        Order a8 = new Order(3123);
         Order a4 = new Order(1231);
+        Order a1 = new Order(123);
+        Order a9 = new Order(4123);
+        Order a3 = new Order(156);
         Order a5 = new Order(1232);
         Order a6 = new Order(1233);
         Order a7 = new Order(2123);
-        Order a8 = new Order(3123);
-        Order a9 = new Order(4123);
+        Order a2 = new Order(134);
         ob.add(a1);
         ob.add(a2);
         ob.add(a3);
