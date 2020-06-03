@@ -2,7 +2,6 @@ package ru.progwards.java1.lessons.queues;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
-import java.util.Scanner;
 
 public class OrderQueue {
     Comparator<Order> comparator = new Comparator<Order>() {
@@ -18,11 +17,11 @@ public class OrderQueue {
     //добавление в соответствующий стек
     public void add(Order order) {
         if (order.getSum() <= 1000) {
-            odin.offer(order);
+            tree.offer(order);
         } else if (order.getSum() <= 2000) {
             dwa.offer(order);
         } else if (order.getSum() > 2000) {
-            tree.offer(order);
+            odin.offer(order);
         }
     }
 
