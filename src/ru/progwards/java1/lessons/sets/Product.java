@@ -11,6 +11,6 @@ public class Product extends ProductAnalytics{
         return code;
     }
     public String toString(){
-        return ("Артикуль: "+ getCode());
+        return ("Артикул: "+ getCode());
     }
 }
