@@ -53,13 +53,13 @@ public class FiboMapCache {
         for (int i=1; i<=1000;i++){
             obj.fiboNumber(i);
         }
-
+        System.out.println("fiboNumber cacheOn=true время выполнения: "+(new Date().getTime() - startTime));
         var startTime1 = new Date().getTime();
         obj.clearCahe();
         for (int i=1; i<=1000;i++){
             obj.fiboNumber(i);
         }
-        System.out.println("fiboNumber cacheOn=true время выполнения: "+(new Date().getTime() - startTime));
+
         System.out.println("fiboNumber cacheOn=false время выполнения: "+(new Date().getTime() - startTime1));
         }
 
