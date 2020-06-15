@@ -7,10 +7,9 @@ import java.util.*;
 public class UsageFrequency {
     List<Character> coll1 = new ArrayList<>();  //кол-ция букв
     List<String> coll2 = new ArrayList<>();  //кол-ция слов
-    public void processFile(String fileName) throws IOException {
-        FileReader file = new FileReader(fileName);//открываем файл для чтения
-        Scanner scanner = new Scanner(file);
-        try {
+    public void processFile(String fileName)  {
+        try (FileReader file = new FileReader(fileName)){//открываем файл для чтения
+        try (Scanner scanner = new Scanner(file)) {
             char[] a1;
             while (scanner.hasNext()) {
                 String a = scanner.next();
@@ -24,10 +23,10 @@ public class UsageFrequency {
                     }
                 }
             }
+        }
         } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            file.close();
+            System.out.println(e);
+            ;
         }
     }
     public Map<Character, Integer> getLetters() {
@@ -68,7 +67,7 @@ public class UsageFrequency {
     }
     public static void main(String[] args) {
         UsageFrequency usa = new UsageFrequency();
-        try {
+
             usa.processFile("???");
         System.out.println("Все буквы и цифры");
         for(Map.Entry<Character,Integer> entry : usa.getLetters().entrySet())
@@ -76,8 +75,6 @@ public class UsageFrequency {
         System.out.println("Все слова");
         for(Map.Entry<String, Integer> entry : usa.getWords().entrySet())
             System.out.println(entry.getKey() + " -> " + entry.getValue());
-        }catch (IOException e){
-            System.out.println(e);;
-        }
+       
     }
 }
