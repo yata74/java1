@@ -1,6 +1,8 @@
 package ru.progwards.java1.lessons.maps;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 public class SalesInfo {
@@ -17,33 +19,31 @@ public class SalesInfo {
         return true;
     }
 
-    public int loadOrders(String fileName) throws Exception {
-        FileReader file1 = new FileReader(fileName);//открываем файл для чтения
-        Scanner scanner = new Scanner(file1);
+    public int loadOrders(String fileName) {
         int sch = 0; // счетчик  строк.
-        try {
-            while (scanner.hasNext()) {
-                String str = scanner.nextLine();
-                String[] mass = str.split("\\s*,\\s*");
-                if (mass.length == 4) {
-                    if (proverka(mass[2], mass[3])) {
+        try (FileReader file1 = new FileReader(fileName)) {//открываем файл для чтения
+            try (Scanner scanner = new Scanner(file1)) {
+                while (scanner.hasNext()) {
+                    String str = scanner.nextLine();
+                    String[] mass = str.split("\\s*,\\s*");
+                    if (mass.length == 4) {
+                        if (proverka(mass[2], mass[3])) {
 
-                        for (int j = 0; j < 4; j++) {
-                            list.add(mass[j]);
+                            for (int j = 0; j < 4; j++) {
+                                list.add(mass[j]);
+                            }
+                            sch++;
                         }
-                        sch++;
                     }
                 }
             }
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        return sch;
+    }
 
-        } finally {
-            file1.close();
-        }
-            return sch;
-        }
-
-
-    public Map<String, Double> getGoods() {
+        public Map<String, Double> getGoods() {
         TreeMap<String, Double> map = new TreeMap<>(); //товар и все деньги,что за него заплатили
         Double summa;
         for (int i = 1; i < list.size();) {
@@ -92,7 +92,6 @@ public class SalesInfo {
 
     public static void main(String[] args) {
         SalesInfo obj = new SalesInfo();
-        try{
             System.out.println(obj.loadOrders("???"));
         System.out.println("Товар и сумма продаж");
         for(Map.Entry<String, Double> entry : obj.getGoods().entrySet())
@@ -100,8 +99,6 @@ public class SalesInfo {
         System.out.println("ФИО, сумма и количество покупок");
         for(Map.Entry<String, AbstractMap.SimpleEntry<Double, Integer>> entry : obj.getCustomers().entrySet())
             System.out.println(entry.getKey() + " -> " + entry.getValue());
-        }catch (Exception e){
-            System.out.println(e);
-        }
+
     }
 }

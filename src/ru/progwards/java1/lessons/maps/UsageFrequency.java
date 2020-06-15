@@ -75,6 +75,6 @@ public class UsageFrequency {
         System.out.println("Все слова");
         for(Map.Entry<String, Integer> entry : usa.getWords().entrySet())
             System.out.println(entry.getKey() + " -> " + entry.getValue());
-       
+
     }
 }
