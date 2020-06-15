@@ -36,15 +36,17 @@ public class FiboMapCache {
             if (fiboCache.containsKey(n)){
                 return fiboCache.get(n);
             }
+            BigDecimal a = fibonacci(n);
+            fiboCache.put(n,a);
+            return a;
         }
         BigDecimal a = fibonacci(n);
-        fiboCache.put(n,a);
         return a;
     }
 //    очищаем кэш
     public void clearCahe(){
         fiboCache.clear();
-//        fiboCache=null;
+        fiboCache=null;
         cacheOn=false;
     }
     public static void test(){
@@ -59,7 +61,6 @@ public class FiboMapCache {
         for (int i=1; i<=1000;i++){
             obj.fiboNumber(i);
         }
-
         System.out.println("fiboNumber cacheOn=false время выполнения: "+(new Date().getTime() - startTime1));
         }
 
