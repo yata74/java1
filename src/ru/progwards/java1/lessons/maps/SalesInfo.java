@@ -93,15 +93,15 @@ public class SalesInfo {
     public static void main(String[] args) {
         SalesInfo obj = new SalesInfo();
         try{
-            System.out.println(obj.loadOrders("text1.txt"));
-        }catch (Exception e){
-            System.out.println(e);
-        }
+            System.out.println(obj.loadOrders("???"));
         System.out.println("Товар и сумма продаж");
         for(Map.Entry<String, Double> entry : obj.getGoods().entrySet())
             System.out.println(entry.getKey() + " -> " + entry.getValue());
         System.out.println("ФИО, сумма и количество покупок");
         for(Map.Entry<String, AbstractMap.SimpleEntry<Double, Integer>> entry : obj.getCustomers().entrySet())
             System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }catch (Exception e){
+            System.out.println(e);
+        }
     }
 }
