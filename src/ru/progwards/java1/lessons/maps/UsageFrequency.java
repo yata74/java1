@@ -7,7 +7,6 @@ import java.util.*;
 public class UsageFrequency {
     List<Character> coll1 = new ArrayList<>();  //кол-ция букв
     List<String> coll2 = new ArrayList<>();  //кол-ция слов
-
     public void processFile(String fileName) throws IOException {
         FileReader file = new FileReader(fileName);//открываем файл для чтения
         Scanner scanner = new Scanner(file);
@@ -25,14 +24,12 @@ public class UsageFrequency {
                     }
                 }
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             file.close();
         }
     }
-
     public Map<Character, Integer> getLetters() {
         HashMap<Character, Integer> map = new HashMap<>();
         int summ;
@@ -51,8 +48,6 @@ public class UsageFrequency {
         }
             return map;
         }
-
-
     public Map<String, Integer> getWords() {
         HashMap<String, Integer> map1 = new HashMap<>();
         int sum;
@@ -71,19 +66,18 @@ public class UsageFrequency {
         }
         return map1;
     }
-
     public static void main(String[] args) {
         UsageFrequency usa = new UsageFrequency();
         try {
-            usa.processFile("text2.txt");
-        }catch (IOException e){
-            e.printStackTrace();
-        }
+            usa.processFile("???");
         System.out.println("Все буквы и цифры");
         for(Map.Entry<Character,Integer> entry : usa.getLetters().entrySet())
             System.out.println(entry.getKey() + " -> " + entry.getValue());
         System.out.println("Все слова");
         for(Map.Entry<String, Integer> entry : usa.getWords().entrySet())
             System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }catch (IOException e){
+            System.out.println(e);;
+        }
     }
 }
