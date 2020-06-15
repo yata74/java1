@@ -57,9 +57,9 @@ public class FiboMapCache {
         }
         System.out.println("fiboNumber cacheOn=true время выполнения: "+(new Date().getTime() - startTime));
         var startTime1 = new Date().getTime();
-        obj.clearCahe();
+        FiboMapCache obj1 =new FiboMapCache(false);
         for (int i=1; i<=1000;i++){
-            obj.fiboNumber(i);
+            obj1.fiboNumber(i);
         }
         System.out.println("fiboNumber cacheOn=false время выполнения: "+(new Date().getTime() - startTime1));
         }
