@@ -14,7 +14,7 @@ public class UsageFrequency {
             while (scanner.hasNext()) {
                 String a = scanner.next();
                 a1 = a.toCharArray();
-                if (Character.isLetter(a1[0]) || Character.isLetter(a1[0])) {
+                if (Character.isLetter(a1[0]) || Character.isDigit(a1[0])) {
                     coll2.add(a);
                 }
                 for (int z = 0; z < a1.length; z++) {
