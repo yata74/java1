@@ -45,7 +45,9 @@ public class FiboMapCache {
     }
 //    очищаем кэш
     public void clearCahe(){
-        fiboCache.clear();
+        if (cacheOn==true) {
+            fiboCache.clear();
+        }
         fiboCache=null;
         cacheOn=false;
     }
