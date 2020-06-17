@@ -14,13 +14,13 @@ public class UsageFrequency {
             while (scanner.hasNext()) {
                 String a = scanner.nextLine();
                 a1 = a.split("[,;:=<>/ '?.()@]+");
-                for (int i = 0; i < a1.length-1; i++) {
+                for (int i = 0; i < a1.length; i++) {
                     a2 = a1[i].toCharArray();
                     if(a2.length!=0) {
                         if (Character.isDigit(a2[0]) || Character.isLetter(a2[0])) {
                             coll2.add(a1[i]);
                         }
-                        for (int z = 0; z < a2.length - 1; z++) {
+                        for (int z = 0; z < a2.length; z++) {
                             if (Character.isDigit(a2[z]) || Character.isLetter(a2[z])) {
                                 coll1.add(a2[z]);
                             }
