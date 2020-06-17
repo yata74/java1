@@ -1,7 +1,6 @@
 package ru.progwards.java1.lessons.maps;
 
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.*;
 
 public class UsageFrequency {
@@ -10,22 +9,28 @@ public class UsageFrequency {
     public void processFile(String fileName)  {
         try (FileReader file = new FileReader(fileName)){//открываем файл для чтения
         try (Scanner scanner = new Scanner(file)) {
-            char[] a1;
+            String[] a1;
+            char[] a2;
             while (scanner.hasNext()) {
-                String a = scanner.next();
-                a1 = a.toCharArray();
-                if (Character.isLetter(a1[0]) || Character.isDigit(a1[0])) {
-                    coll2.add(a);
-                }
-                for (int z = 0; z < a1.length; z++) {
-                    if (Character.isDigit(a1[z]) || Character.isLetter(a1[z])) {
-                        coll1.add(a1[z]);
+                String a = scanner.nextLine();
+                a1 = a.split("[,;:=<>/ '?.()@]+");
+                for (int i = 0; i < a1.length-1; i++) {
+                    a2 = a1[i].toCharArray();
+                    if(a2.length!=0) {
+                        if (Character.isDigit(a2[0]) || Character.isLetter(a2[0])) {
+                            coll2.add(a1[i]);
+                        }
+                        for (int z = 0; z < a2.length - 1; z++) {
+                            if (Character.isDigit(a2[z]) || Character.isLetter(a2[z])) {
+                                coll1.add(a2[z]);
+                            }
+                        }
                     }
                 }
             }
         }
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();;
         }
     }
     public Map<Character, Integer> getLetters() {
@@ -67,7 +72,7 @@ public class UsageFrequency {
     public static void main(String[] args) {
         UsageFrequency usa = new UsageFrequency();
 
-            usa.processFile("???");
+            usa.processFile("text2.txt");
         System.out.println("Все буквы и цифры");
         for(Map.Entry<Character,Integer> entry : usa.getLetters().entrySet())
             System.out.println(entry.getKey() + " -> " + entry.getValue());
